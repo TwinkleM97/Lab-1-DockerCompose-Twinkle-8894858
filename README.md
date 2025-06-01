@@ -83,8 +83,8 @@ Access the app at:
 
 1️⃣ Clone the repository:
 ```bash
-git clone <your-repo-url>
-cd <repo-folder>
+git clone https://github.com/TwinkleM97/Lab-1-DockerCompose-Twinkle-8894858.git
+cd Lab-1-DockerCompose-Twinkle-8894858
 ```
 
 2️⃣ Start **PostgreSQL + pgAdmin**:
