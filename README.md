@@ -115,7 +115,31 @@ Add screenshots of:
 - Docker Destop, docker-compose run 
 
 ---
+## Important Notes
 
+### First-Time Setup: Running `init.sql`
+
+The `init.sql` file will only be executed by MySQL on **first container startup**.
+
+If you have previously run a MySQL container (even for other projects), you **must** clean up existing containers and volumes before running this project. Otherwise, the `init.sql` script will not run.
+
+To ensure a clean setup, run the following command before starting Docker Compose:
+```bash
+docker-compose down -v
+```
+
+This will remove:
+- Existing MySQL containers
+- Docker volumes (including any previous MySQL data)
+
+After cleanup, start Docker Compose as usual:
+```bash
+docker-compose up -d --build
+```
+
+This ensures that the `init.sql` script will execute and the `mydb` database + `users` table will be created properly.
+
+---
 ## Notes
 
 - `init.sql` auto-creates the `users` table on first MySQL startup.
